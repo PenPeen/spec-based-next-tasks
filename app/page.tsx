@@ -39,10 +39,10 @@ export default function Home() {
       const updatedTasks = tasks.map((task) =>
         task.id === editingTask.id
           ? {
-              ...task,
-              ...taskData,
-              updatedAt: Date.now(),
-            }
+            ...task,
+            ...taskData,
+            updatedAt: Date.now(),
+          }
           : task
       );
       setTasks(updatedTasks);
@@ -91,10 +91,10 @@ export default function Home() {
     const updatedTasks = tasks.map((task) =>
       task.id === id
         ? {
-            ...task,
-            completed: !task.completed,
-            updatedAt: Date.now(),
-          }
+          ...task,
+          completed: !task.completed,
+          updatedAt: Date.now(),
+        }
         : task
     );
     setTasks(updatedTasks);
@@ -102,14 +102,14 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen bg-gray-50 p-8">
-      <div className="max-w-3xl mx-auto">
+    <main className="min-h-screen bg-gray-50 p-4 sm:p-6 md:p-8">
+      <div className="max-w-[800px] mx-auto">
         {/* ヘッダー */}
-        <div className="flex justify-between items-center mb-8">
-          <h1 className="text-3xl font-bold text-gray-900">タスク管理アプリ</h1>
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6 sm:mb-8">
+          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">タスク管理アプリ</h1>
           <button
             onClick={handleCreateTask}
-            className="px-4 py-2 text-white bg-blue-600 rounded-md hover:bg-blue-700 transition-colors"
+            className="w-full sm:w-auto px-4 py-2 text-white bg-blue-600 rounded-md hover:bg-blue-700 active:bg-blue-800 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
           >
             + 新しいタスク
           </button>

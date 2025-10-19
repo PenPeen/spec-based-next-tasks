@@ -25,14 +25,19 @@ export default function TaskList({ tasks, onToggleComplete, onEdit, onDelete }: 
 
   return (
     <div className="space-y-3">
-      {sortedTasks.map((task) => (
-        <TaskItem
+      {sortedTasks.map((task, index) => (
+        <div
           key={task.id}
-          task={task}
-          onToggleComplete={onToggleComplete}
-          onEdit={onEdit}
-          onDelete={onDelete}
-        />
+          className="animate-slideUp"
+          style={{ animationDelay: `${index * 0.05}s` }}
+        >
+          <TaskItem
+            task={task}
+            onToggleComplete={onToggleComplete}
+            onEdit={onEdit}
+            onDelete={onDelete}
+          />
+        </div>
       ))}
     </div>
   );
